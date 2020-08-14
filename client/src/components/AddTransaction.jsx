@@ -14,7 +14,7 @@ export const AddTransaction = () => {
     const newTransaction = {
       id: Date.now().toString(),
       text,
-      amount
+      amount: parseInt(amount)
     }
 
     setText('');
@@ -36,7 +36,7 @@ export const AddTransaction = () => {
             >Amount <br />
             (negative - expense, positive - income)</label
           >
-          <input type="number" placeholder="Enter amount..." value={amount} onChange={e => setAmount(parseInt(e.target.value))} />
+          <input type="text" placeholder="Enter amount..." value={amount} onChange={e => setAmount(e.target.value)} />
         </div>
         <button onClick={onClick}className="btn">Add transaction</button>
       </form> 
